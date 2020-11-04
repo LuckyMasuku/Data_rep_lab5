@@ -5,7 +5,7 @@ const port = 3000;
 const path = require('path');
 const bodyParser = require('body-parser');
 
-// parse application/x-www-form-urlencoded
+// parser application/xpress-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
@@ -44,13 +44,19 @@ app.get('/api/movies', (re, res)=>{
         
     res.json({movies:mymovies});
 });
-
+// allows the path tto the index html
 app.get('/test', (rep, res)=>{
     res.sendFile(__dirname + '/index.html');
 })
+//allows the data to be sent as url
+//sends the first name and last name to the saver
+// allows to pass perimiters on the url
 app.get('/name', (req, res)=>{
     res.send('Hello ' + req.query.fname +' ' + req.query.lname);
 })
+//sends data as post methord
+//listens to the
+//data is sent using the body
 app.post('/name', (req, res)=>{
 res.send('Hello ' + req.body.fname + ' ' + req.body.lname);
 
